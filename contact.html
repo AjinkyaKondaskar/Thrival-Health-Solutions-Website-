@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thrival Health | Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="thrival-logo.png" alt="Thrival Health logo" class="logo" />
+                <div class="brand-text">
+                    <span class="brand-name">Thrival Health</span>
+                    <span class="brand-tagline">Clinical ordering made simple</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contact">
+        <!-- Contact section -->
+        <section class="section">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Talk with the Thrival Health team</h2>
+                    <p>
+                        If you’d like to see the portal, review pricing, or discuss how we
+                        work with your existing compounding relationships, send us a
+                        message.
+                    </p>
+                </header>
+
+                <div class="contact-grid">
+                    <form class="card contact-form" action="#" method="post">
+                        <!-- Replace action="#" with your real form endpoint when ready -->
+                        <div class="field">
+                            <label for="name">Your name</label>
+                            <input id="name" name="name" type="text" required />
+                        </div>
+                        <div class="field">
+                            <label for="clinic">Clinic name</label>
+                            <input id="clinic" name="clinic" type="text" />
+                        </div>
+                        <div class="field">
+                            <label for="email">Work email</label>
+                            <input id="email" name="email" type="email" required />
+                        </div>
+                        <div class="field">
+                            <label for="message">How can we help?</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary full-width">
+                            Submit inquiry
+                        </button>
+                    </form>
+
+                    <div class="contact-side">
+                        <h3>Prefer email?</h3>
+                        <p>
+                            Reach us at
+                            <a href="mailto:thrivalhealth@outlook.com">thrivalhealth@outlook.com</a>
+                            and we’ll reply as soon as possible.
+                        </p>
+
+                        <p class="contact-note">
+                            Please do not include PHI (full patient names, dates of birth,
+                            etc.) in your initial email. We will share secure ways to send any
+                            necessary details once we’re connected.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <span class="brand-name">Thrival Health</span>
+                <p class="footer-text">
+                    Software platform connecting clinics, prescribers, and compounding
+                    pharmacies for faster, clearer patient-specific orders.
+                </p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-meta">
+                <p class="footer-text">
+                    © <span id="year"></span> Thrival Health. All rights reserved.
+                </p>
+                <p class="footer-text small">
+                    Thrival Health provides software only and does not practice medicine
+                    or operate as a pharmacy.
+                </p>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+
+</html>

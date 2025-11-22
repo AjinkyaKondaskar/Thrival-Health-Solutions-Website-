@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thrival Health | About</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="thrival-logo.png" alt="Thrival Health logo" class="logo" />
+        <div class="brand-text">
+          <span class="brand-name">Thrival Health</span>
+          <span class="brand-tagline">Clinical ordering made simple</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Story intro -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Our story</h1>
+          <p class="hero-subtitle">
+            Thrival Health was created to remove friction between clinics,
+            prescribers, and compounding pharmacies starting with weight loss
+            drugs and peptides, and expanding to other therapies over time.
+          </p>
+          <div class="hero-meta">
+            <span>18+ months of focused development</span>
+            <span>20+ clinics placing orders today</span>
+            <span>Built alongside real front-desk staff & prescribers</span>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h2>From idea to clinic-ready platform</h2>
+          <p>
+            We’ve spent the last year and a half listening to the same story:
+            phone calls, paper order forms, and scattered spreadsheets make
+            prescribing slow and frustrating—for staff, doctors, pharmacies, and
+            patients.
+          </p>
+          <p>
+            Thrival Health grew out of that frustration. We set out to build one
+            clean, predictable workflow for patient-specific compounded
+            prescriptions, without touching the clinical judgment that belongs
+            to the prescriber.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Problem & values -->
+    <section class="section alt">
+      <div class="container split-grid">
+        <div>
+          <header class="section-header left">
+            <h2>Built with clinics, for clinics</h2>
+          </header>
+          <p>
+            Too many practices still rely on manual processes to manage
+            prescriptions. Staff chase signatures, doctors field endless calls,
+            pharmacies track details by hand, and patients wait.
+          </p>
+          <p>
+            From day one we have worked side-by-side with our earliest clinics. Every detail from how orders are named to how status
+            updates are displayed comes from real-world feedback.
+          </p>
+          <p>
+            Today, more than 20 clinics are actively placing orders through
+            Thrival Health, and that network is growing as we help partners add
+            new therapies and locations.
+          </p>
+        </div>
+
+        <div class="card values-card">
+          <h3>What we stand for</h3>
+          <ul class="feature-list">
+            <li>
+              <strong>Speed with safety.</strong> Fast turnaround that respects
+              clinical safeguards and appropriate checks.
+            </li>
+            <li>
+              <strong>Clarity.</strong> Everyone (clinic, prescriber and pharmacy ) can see where each order is in the process.
+            </li>
+            <li>
+              <strong>Partnership.</strong> We grow by helping clinics and
+              pharmacies grow together, not by replacing either one.
+            </li>
+            <li>
+              <strong>Reliability.</strong> If something goes wrong with a
+              shipment or an order, we help make it right.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Where we're going -->
+    <section class="section">
+      <div class="container split-grid">
+        <div class="card">
+          <h3>Where we’re headed</h3>
+          <p>
+            We started with weight loss drugs and peptides because that’s where
+            clinics felt pain the most—high demand, complex inventory, and
+            patients who can’t afford delays.
+          </p>
+          <p>
+            Our roadmap includes expanding to additional therapies, richer
+            reporting for clinics, and deeper API connections with pharmacy and
+            practice management partners.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>By the numbers</h3>
+          <ul class="feature-list">
+            <li>20+ clinics actively placing orders through the platform.</li>
+            <li>24–48 hour delivery standard for filled prescriptions.</li>
+            <li>Coverage across all 50 states via partner pharmacies.</li>
+            <li>A growing team focused solely on making prescribing easier.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="brand-name">Thrival Health</span>
+        <p class="footer-text">
+          Software platform connecting clinics, prescribers, and compounding
+          pharmacies for faster, clearer patient-specific orders.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-meta">
+        <p class="footer-text">
+          © <span id="year"></span> Thrival Health. All rights reserved.
+        </p>
+        <p class="footer-text small">
+          Thrival Health provides software only and does not practice medicine
+          or operate as a pharmacy.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
