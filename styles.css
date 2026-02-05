@@ -1,20 +1,27 @@
 /* ===== Global styles & design tokens (Thrival palette) ===== */
 :root {
   /* Warm neutrals */
-  --bg: #fbf8f3;          /* page background */
-  --bg-alt: #f3ede4;      /* section alt background */
+  --bg: #fbf8f3;
+  /* page background */
+  --bg-alt: #f3ede4;
+  /* section alt background */
   --card: #ffffff;
   --card-soft: #fffdfa;
   --border-subtle: rgba(35, 24, 16, 0.08);
 
   /* Typography */
-  --text: #1a130d;        /* espresso */
-  --muted: #6f655b;       /* warm gray */
+  --text: #1a130d;
+  /* espresso */
+  --muted: #6f655b;
+  /* warm gray */
 
   /* Brand golds (pulled from logo vibe) */
-  --accent: #c9ad86;      /* light gold */
-  --accent-strong: #9b805f; /* logo gold / bronze */
-  --accent-deep: #7d5f43; /* deeper bronze for hover/contrast */
+  --accent: #c9ad86;
+  /* light gold */
+  --accent-strong: #9b805f;
+  /* logo gold / bronze */
+  --accent-deep: #7d5f43;
+  /* deeper bronze for hover/contrast */
   --accent-soft: rgba(155, 128, 95, 0.18);
 
   --radius-lg: 24px;
@@ -70,7 +77,8 @@ a:hover {
 }
 
 .section {
-  padding: 4.25rem 0; /* slightly tighter so pages feel less empty */
+  padding: 4.25rem 0;
+  /* slightly tighter so pages feel less empty */
 }
 
 .section.alt {
@@ -164,12 +172,25 @@ a:hover {
     transform var(--transition-fast);
 }
 
-.nav-link:hover,
-.nav-login:hover {
+.nav-link:hover {
   color: var(--text);
-  background: rgba(155, 128, 95, 0.12);
+  background: rgba(155, 128, 95, 0.14);
   transform: translateY(-1px);
 }
+
+.nav-login:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(201, 173, 134, 0.45),
+    rgba(201, 173, 134, 0.25)
+  );
+  border-color: rgba(155, 128, 95, 0.85);
+  box-shadow:
+    0 10px 24px rgba(26, 19, 13, 0.18);
+  transform: translateY(-1px);
+}
+
+
 
 .nav-link.active {
   color: var(--text);
@@ -177,8 +198,21 @@ a:hover {
 }
 
 .nav-login {
-  border: 1px solid rgba(155, 128, 95, 0.35);
+  padding: 0.5rem 1.1rem;              /* more button-like */
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(155, 128, 95, 0.65);
+  color: var(--text);
+  font-weight: 700;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.85)
+  );
+  box-shadow:
+    0 6px 16px rgba(26, 19, 13, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
+
 
 /* ===== Buttons ===== */
 
@@ -548,6 +582,7 @@ a:hover {
 /* ===== Responsive ===== */
 
 @media (max-width: 960px) {
+
   .hero-grid,
   .split-grid,
   .feature-grid,
