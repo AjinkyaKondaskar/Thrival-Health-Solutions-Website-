@@ -1,0 +1,204 @@
+/* ============================================================
+   effects.css  --  Canvas, Glow, Magnetic Text, Scroll Reveal, Animations
+   Thrival Health
+   ============================================================ */
+
+/* --- Three.js canvas - behind everything --- */
+
+#three-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* --- Glow Effects --- */
+
+.glow {
+  position: relative;
+}
+
+.glow::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(201, 173, 134, 0.15),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 400ms ease-out;
+}
+
+.glow:hover::after {
+  opacity: 1;
+}
+
+.glow-gold {
+  box-shadow: 0 0 40px rgba(201, 173, 134, 0.12);
+  transition: box-shadow 400ms ease-out;
+}
+
+.glow-gold:hover {
+  box-shadow:
+    0 0 60px rgba(201, 173, 134, 0.22),
+    0 0 100px rgba(155, 128, 95, 0.08);
+}
+
+/* --- Magnetic Text (character spans) --- */
+
+.magnetic-text {
+  display: inline;
+}
+
+.magnetic-text .char {
+  display: inline-block;
+  transition:
+    transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    color 300ms ease-out;
+  will-change: transform;
+}
+
+.magnetic-text:hover .char {
+  color: var(--accent-deep);
+}
+
+/* --- Scroll Reveal --- */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 600ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.scroll-reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 500ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 500ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.scroll-reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0ms; }
+.scroll-reveal-stagger.revealed > *:nth-child(2) { transition-delay: 80ms; }
+.scroll-reveal-stagger.revealed > *:nth-child(3) { transition-delay: 160ms; }
+.scroll-reveal-stagger.revealed > *:nth-child(4) { transition-delay: 240ms; }
+.scroll-reveal-stagger.revealed > *:nth-child(5) { transition-delay: 320ms; }
+.scroll-reveal-stagger.revealed > *:nth-child(6) { transition-delay: 400ms; }
+
+.scroll-reveal-stagger.revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Animated Stat Counter --- */
+
+.stat-counter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-counter.counting {
+  transition: none;
+}
+
+/* --- Section Fade/Slide Animations --- */
+
+.section-fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.section-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.section-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.section-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Scale-in effect for cards --- */
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 500ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 500ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Floating animation for hero elements --- */
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+/* --- Pulse animation for attention elements --- */
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(201, 173, 134, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(201, 173, 134, 0);
+  }
+}
+
+.pulse-gold {
+  animation: pulse-gold 2.5s ease-in-out infinite;
+}

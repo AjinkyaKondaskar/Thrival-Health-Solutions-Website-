@@ -1,0 +1,506 @@
+/* ============================================================
+   sections.css  --  Section-specific styles for each page section
+   Thrival Health
+   ============================================================ */
+
+/* --- #hero --- */
+
+.hero {
+  padding: 5.2rem 0 4.2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero .container {
+  width: 100%;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.25rem, 3.1vw, 3rem);
+  line-height: 1.08;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-copy .accent {
+  background: linear-gradient(120deg, var(--accent), var(--accent-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.hero-meta span {
+  padding: 0.38rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(155, 128, 95, 0.18);
+}
+
+/* Hero side card */
+
+.hero-card {
+  background:
+    radial-gradient(600px 420px at 15% 10%, rgba(201, 173, 134, 0.22), transparent 55%),
+    radial-gradient(520px 420px at 90% 30%, rgba(155, 128, 95, 0.14), transparent 55%),
+    rgba(255, 255, 255, 0.86);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.55rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(155, 128, 95, 0.18);
+}
+
+.hero-card h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.hero-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* --- #pain-points --- */
+
+#pain-points {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+#pain-points .container {
+  width: 100%;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.pain-card {
+  text-align: center;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.pain-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.pain-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+#pain-points .card h3 {
+  margin-bottom: 0.5rem;
+}
+
+#pain-points .card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* --- #value-props --- */
+
+#value-props {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+#value-props .container {
+  width: 100%;
+}
+
+#value-props .card {
+  transition:
+    transform 280ms ease-out,
+    box-shadow 280ms ease-out,
+    border-color 280ms ease-out;
+}
+
+#value-props .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(155, 128, 95, 0.32);
+}
+
+#value-props .card h3 {
+  margin-bottom: 0.4rem;
+}
+
+#value-props .card p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* --- #workflow --- */
+
+#workflow {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+#workflow .container {
+  width: 100%;
+}
+
+.workflow-step {
+  position: relative;
+  text-align: center;
+  padding-top: 2.5rem;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.workflow-step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.workflow-step:hover .step-number {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fff;
+}
+
+.workflow-step h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.workflow-step p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.workflow-step.highlight {
+  border-color: rgba(155, 128, 95, 0.38);
+  box-shadow: var(--shadow-soft);
+}
+
+.workflow-step.highlight .step-number {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fff;
+}
+
+/* --- #formulary --- */
+
+#formulary {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+#formulary .container {
+  width: 100%;
+}
+
+.formulary-card {
+  text-align: center;
+  transition:
+    transform 280ms ease-out,
+    box-shadow 280ms ease-out;
+}
+
+.formulary-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--shadow-soft);
+}
+
+.formulary-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.formulary-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.formulary-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.formulary-card .feature-list {
+  text-align: left;
+  margin-top: 0.75rem;
+}
+
+/* --- #features --- */
+
+#features {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+#features .container {
+  width: 100%;
+}
+
+#features .split-grid .card {
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+#features .split-grid .card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+
+#features .card h3 {
+  margin-bottom: 0.6rem;
+}
+
+#features .card p {
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+/* --- #security --- */
+
+#security {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(600px 400px at 20% 50%, rgba(26, 19, 13, 0.04), transparent 55%),
+    var(--bg-alt);
+}
+
+#security .container {
+  width: 100%;
+}
+
+#security .card {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+#security h3 {
+  margin-bottom: 0.5rem;
+}
+
+#security p,
+.security-description {
+  color: var(--muted);
+}
+
+.security-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.security-features .feature-list li {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* --- #stats --- */
+
+#stats {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 4.25rem 0;
+}
+
+#stats .container {
+  width: 100%;
+}
+
+.stat-card {
+  padding: 2rem 1rem;
+}
+
+.stat-number {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.4rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.stat-sublabel {
+  font-size: 0.8rem;
+  color: var(--muted);
+  opacity: 0.7;
+  margin-top: 0.15rem;
+}
+
+/* --- #about --- */
+
+#about {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+#about .container {
+  width: 100%;
+}
+
+.about-story {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.about-story p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.values-card {
+  padding: 1.5rem;
+}
+
+.values-card strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.values-card p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.values-list li {
+  padding-left: 1.3rem;
+  position: relative;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.values-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent-deep);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.about-roadmap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about-roadmap p:last-child {
+  margin-bottom: 0;
+}
+
+.growing-label {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- #contact --- */
+
+#contact {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+#contact .container {
+  width: 100%;
+}
+
+/* --- Login Section --- */
+
+.login-section {
+  padding-top: 0;
+  padding-bottom: 4rem;
+}
+
+.login-card {
+  text-align: center;
+}

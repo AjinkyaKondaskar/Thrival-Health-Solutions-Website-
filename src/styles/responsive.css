@@ -1,0 +1,259 @@
+/* ============================================================
+   responsive.css  --  Breakpoints & Accessibility
+   Thrival Health
+   ============================================================ */
+
+/* --- Tablet / small desktop (960px) --- */
+
+@media (max-width: 960px) {
+
+  /* All grids collapse to single column */
+  .hero-grid,
+  .split-grid,
+  .feature-grid,
+  .security-grid,
+  .contact-grid,
+  .footer-grid,
+  .workflow-grid,
+  .stats-grid,
+  .formulary-grid,
+  .pain-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Stats stays 2-col on tablet for better density */
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Workflow stays 2-col on tablet */
+  .workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Pain grid stays 2-col on tablet */
+  .pain-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Hero padding adjustment */
+  .hero {
+    padding-top: 4.5rem;
+    min-height: auto;
+  }
+
+  /* Nav adjustments */
+  .nav-container {
+    padding-inline: 1rem;
+  }
+
+  .nav-links {
+    gap: 0.55rem;
+    font-size: 0.88rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .pain-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Hero card reorders above copy on small screens */
+  .hero-card {
+    order: -1;
+  }
+
+  /* Remove pain-points stagger at smaller sizes */
+  #pain-points .split-grid .card:nth-child(2) {
+    transform: none;
+  }
+
+  #pain-points .split-grid .card:nth-child(2):hover {
+    transform: translateY(-4px);
+  }
+
+  /* Sections no longer force min-height */
+  .hero,
+  #pain-points,
+  #value-props,
+  #workflow,
+  #formulary,
+  #features,
+  #security,
+  #stats,
+  #about,
+  #contact {
+    min-height: auto;
+  }
+}
+
+/* --- Mobile (640px) --- */
+
+@media (max-width: 640px) {
+
+  /* Mobile nav toggle */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(251, 248, 243, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(155, 128, 95, 0.14);
+    gap: 0.5rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-container {
+    position: relative;
+  }
+
+  /* Tighter section padding */
+  .section {
+    padding: 3.6rem 0;
+  }
+
+  /* Smaller hero heading */
+  .hero-copy h1 {
+    font-size: 2rem;
+  }
+
+  /* Reduced card padding */
+  .card {
+    padding: 1.25rem 1.1rem;
+  }
+
+  /* Section header */
+  .section-header h2 {
+    font-size: 1.65rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Stats and workflow go single column */
+  .stats-grid,
+  .workflow-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Stat number sizing */
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  /* Nav further compacts */
+  .nav-links {
+    gap: 0.35rem;
+    font-size: 0.82rem;
+  }
+
+  .nav-login {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Hero actions stack */
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  /* Container tighter padding */
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Footer grid spacing */
+  .footer-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* --- Accessibility: Reduced Motion --- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  /* Disable all animations */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable transforms on hover */
+  .btn.primary:hover,
+  .nav-link:hover,
+  .nav-login:hover,
+  #pain-points .card:hover,
+  #value-props .card:hover,
+  .formulary-card:hover,
+  #features .split-grid .card:hover,
+  .workflow-card:hover .workflow-number {
+    transform: none !important;
+  }
+
+  /* Ensure scroll-reveal content is visible without JS */
+  .scroll-reveal,
+  .scroll-reveal-stagger > *,
+  .section-fade-in,
+  .section-slide-left,
+  .section-slide-right,
+  .scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Pain-points stagger reset */
+  #pain-points .split-grid .card:nth-child(2) {
+    transform: none !important;
+  }
+
+  /* Hide canvases - no visual effects needed */
+  #three-canvas {
+    display: none !important;
+  }
+
+  /* Disable floating/pulse animations */
+  .float-gentle,
+  .pulse-gold {
+    animation: none !important;
+  }
+
+  /* Disable magnetic text transitions */
+  .magnetic-text .char {
+    transition: none !important;
+  }
+
+  /* Disable glow hover effects */
+  .glow::after {
+    display: none !important;
+  }
+
+  .glow-gold {
+    transition: none !important;
+  }
+}

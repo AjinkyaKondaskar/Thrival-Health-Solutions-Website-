@@ -1,0 +1,120 @@
+/* ============================================================
+   scroll-sections.css — Overlay text + scroll spacer styles
+   Hybrid scroll experience for 3D room
+   ============================================================ */
+
+/* --- Scroll Spacers (provide scroll height for ScrollTrigger) --- */
+.scroll-spacer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  pointer-events: none;
+}
+
+/* --- Text Overlays --- */
+.text-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 5vw;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.text-overlay .eyebrow {
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-strong, #9b805f);
+  margin: 0 0 24px;
+}
+
+.text-overlay .headline {
+  font-size: clamp(36px, 6vw, 96px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0 0 24px;
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5);
+}
+
+.text-overlay .body {
+  font-size: clamp(16px, 1.6vw, 24px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 700px;
+  margin: 0;
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Scroll Cue (hero section) --- */
+.scroll-cue {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.scroll-line {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: var(--accent, #c9ad86);
+  transform-origin: top;
+  animation: scroll-pulse 2s ease-in-out infinite;
+}
+
+.scroll-cue span:last-child {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-strong, #9b805f);
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.4; }
+  50% { transform: scaleY(1.4); opacity: 1; }
+}
+
+/* --- CTA Button --- */
+.cta-btn {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 18px 48px;
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 600;
+  color: #fbf8f3;
+  background: var(--accent-deep, #7d5f43);
+  border-radius: var(--radius-pill, 999px);
+  text-decoration: none;
+  pointer-events: auto;
+  transition: transform 180ms ease-out, box-shadow 180ms ease-out;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(125, 95, 67, 0.35);
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .text-overlay {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .scroll-line {
+    animation: none !important;
+  }
+}
