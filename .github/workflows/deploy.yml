@@ -1,33 +1,19 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, feature/3d-room-experience]
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  configure:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Switch Pages source to GitHub Actions
-        run: |
-          gh api repos/${{ github.repository }}/pages \
-            --method PUT \
-            -f build_type=workflow || echo "Pages config update skipped"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  build:
-    needs: configure
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,21 +30,13 @@ jobs:
       - name: Build
         run: npx vite build --base=/
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Add CNAME
+        run: echo "thrivalhealth.solutions" > dist/CNAME
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to main branch
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          branch: main
+          folder: dist
+          clean: true
+          commit-message: "Deploy built site [skip ci]"
