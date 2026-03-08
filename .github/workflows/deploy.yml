@@ -15,7 +15,19 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  configure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Switch Pages source to GitHub Actions
+        run: |
+          gh api repos/${{ github.repository }}/pages \
+            --method PUT \
+            -f build_type=workflow || echo "Pages config update skipped"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   build:
+    needs: configure
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
