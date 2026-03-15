@@ -10,8 +10,8 @@ export class CameraAnimation {
     this.roomOverviewTarget = new Vector3(0, 0.3, 0);
 
     // Monitor close-up: directly in front of monitor at screen center height
-    this.monitorClosePos = new Vector3(0, 0.5, 1.35);
-    this.monitorCloseTarget = new Vector3(0, 0.5, 0);
+    this.monitorClosePos = new Vector3(0, 0.78, 1.35);
+    this.monitorCloseTarget = new Vector3(0, 0.78, 0);
 
     // lookAt proxy — used to smoothly interpolate the camera's look target
     this._lookProxy = {
