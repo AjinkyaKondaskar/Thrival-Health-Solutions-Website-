@@ -9,7 +9,6 @@
     <link rel="icon" type="image/png" href="thrival-logo.png" />
     <link rel="shortcut icon" type="image/png" href="thrival-logo.png" />
     <link rel="apple-touch-icon" href="thrival-logo.png" />
-
 </head>
 
 <body>
@@ -37,18 +36,17 @@
         <!-- Contact section -->
         <section class="section">
             <div class="container">
-                <header class="section-header">
+                <header class="section-header animate-fade-up">
                     <h2>Talk with the Thrival Health team</h2>
                     <p>
-                        If you’d like to see the portal, review pricing, or discuss how we
+                        If you'd like to see the portal, review pricing, or discuss how we
                         work with your existing compounding relationships, send us a
                         message.
                     </p>
                 </header>
 
                 <div class="contact-grid">
-                    <form class="card contact-form" action="#" method="post">
-                        <!-- Replace action="#" with your real form endpoint when ready -->
+                    <form class="card contact-form reveal" action="#" method="post">
                         <div class="field">
                             <label for="name">Your name</label>
                             <input id="name" name="name" type="text" required />
@@ -70,18 +68,18 @@
                         </button>
                     </form>
 
-                    <div class="contact-side">
+                    <div class="contact-side reveal">
                         <h3>Prefer email?</h3>
                         <p>
                             Reach us at
                             <a href="mailto:thrivalhealth@outlook.com">thrivalhealth@outlook.com</a>
-                            and we’ll reply as soon as possible.
+                            and we'll reply as soon as possible.
                         </p>
 
                         <p class="contact-note">
                             Please do not include PHI (full patient names, dates of birth,
                             etc.) in your initial email. We will share secure ways to send any
-                            necessary details once we’re connected.
+                            necessary details once we're connected.
                         </p>
                     </div>
                 </div>
@@ -95,7 +93,7 @@
             <div>
                 <span class="brand-name">Thrival Health</span>
                 <p class="footer-text">
-                    Software platform for e-prescribing workflow, integrations, 
+                    Software platform for e-prescribing workflow, integrations,
                     and prescription-order data management connecting clinics, prescribers, and pharmacies.
                 </p>
             </div>
@@ -106,7 +104,7 @@
             </div>
             <div class="footer-meta">
                 <p class="footer-text">
-                    © <span id="year"></span> Thrival Health. All rights reserved.
+                    &copy; <span id="year"></span> Thrival Health. All rights reserved.
                 </p>
                 <p class="footer-text small">
                     Thrival Health provides software only and does not practice medicine
@@ -116,8 +114,18 @@
         </div>
 
         <script>
-            document.getElementById("year").textContent =
-                new Date().getFullYear();
+            document.getElementById("year").textContent = new Date().getFullYear();
+
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            reveals.forEach(el => observer.observe(el));
         </script>
     </footer>
 </body>

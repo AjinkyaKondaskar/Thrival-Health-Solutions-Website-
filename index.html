@@ -11,7 +11,6 @@
     <link rel="icon" type="image/png" href="thrival-logo.png" />
     <link rel="shortcut icon" type="image/png" href="thrival-logo.png" />
     <link rel="apple-touch-icon" href="thrival-logo.png" />
-
 </head>
 
 <body>
@@ -30,7 +29,6 @@
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <!-- Login button -->
                 <a href="/login" class="nav-login">Login</a>
             </nav>
         </div>
@@ -41,29 +39,29 @@
         <section class="hero" id="home">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <h1>
+                    <h1 class="animate-fade-up">
                         Patient specific prescription workflows.<br />
                         <span class="accent">Streamlined e-prescribing and order management.</span>
                     </h1>
-                    <p class="hero-subtitle">
+                    <p class="hero-subtitle animate-fade-up delay-1">
                         Thrival Health gives clinics and prescribers a single portal to create and manage
                         patient-specific prescription orders. Staff enter patient details and medications, prescribers
                         review/sign, and order information is transmitted to a partnering compounding pharmacy (or other
                         integrated pharmacy) for fulfillment and shipping directly to the patient, subject to the
-                        pharmacy’s policies and applicable law.
+                        pharmacy's policies and applicable law.
                     </p>
-                    <div class="hero-actions">
+                    <div class="hero-actions animate-fade-up delay-2">
                         <a href="contact.html" class="btn primary">Book a demo</a>
                     </div>
 
-                    <div class="hero-meta">
+                    <div class="hero-meta animate-fade-up delay-3">
                         <span>Patient-specific 503A orders</span>
                         <span>Secure pharmacy integrations</span>
-                        <span>Nationwide clinic support.</span>
+                        <span>Nationwide clinic support</span>
                     </div>
                 </div>
 
-                <aside class="hero-card">
+                <aside class="hero-card animate-fade-up delay-2">
                     <h2>How Thrival Health fits into your clinic</h2>
                     <ol class="steps">
                         <li>
@@ -117,7 +115,7 @@
         <!-- ===== For Clinics & Doctors ===== -->
         <section class="section" id="for-clinics">
             <div class="container">
-                <header class="section-header">
+                <header class="section-header reveal">
                     <h2>Built for clinics and prescribers</h2>
                     <p>
                         Keep clinical decisions with the prescriber while giving your staff
@@ -126,18 +124,18 @@
                 </header>
 
                 <div class="split-grid">
-                    <div class="card">
+                    <div class="card reveal">
                         <h3>Clinic & staff accounts</h3>
                         <ul class="feature-list">
                             <li>Create and manage patient profiles securely.</li>
                             <li>Add medications and notes in a consistent format.</li>
-                            <li>Preview the prescription PDF before it’s signed.</li>
-                            <li>Follow order status from “created” to “shipped”.</li>
-                            <li>No signing in clinic accounts—prescribers handle signin</li>
+                            <li>Preview the prescription PDF before it's signed.</li>
+                            <li>Follow order status from "created" to "shipped".</li>
+                            <li>No signing in clinic accounts—prescribers handle signing.</li>
                         </ul>
                     </div>
 
-                    <div class="card">
+                    <div class="card reveal">
                         <h3>Prescriber accounts</h3>
                         <ul class="feature-list">
                             <li>Review order details and PDFs prepared by staff.</li>
@@ -158,12 +156,12 @@
         <!-- ===== Why clinics choose Thrival ===== -->
         <section class="section alt" id="reasons">
             <div class="container">
-                <header class="section-header">
+                <header class="section-header reveal">
                     <h2>Why clinics choose Thrival Health</h2>
                 </header>
 
                 <div class="feature-grid">
-                    <div class="card small">
+                    <div class="card small reveal">
                         <h3>Faster, cleaner workflows</h3>
                         <p>
                             Reduce delays by centralizing order entry, documentation, and
@@ -171,14 +169,14 @@
                             is determined by the pharmacy and carrier).
                         </p>
                     </div>
-                    <div class="card small">
+                    <div class="card small reveal">
                         <h3>Fewer operational headaches</h3>
                         <p>
                             Less back-and-forth. Notes and clarifications stay attached
                             to the order in a secure, searchable system.
                         </p>
                     </div>
-                    <div class="card small">
+                    <div class="card small reveal">
                         <h3>Simplified payment routing</h3>
                         <p>
                             Thrival Health facilitates payment collection from prescribing doctors
@@ -186,14 +184,14 @@
                             schedule without Thrival acting as a pharmacy.
                         </p>
                     </div>
-                    <div class="card small">
+                    <div class="card small reveal">
                         <h3>Less phone and fax</h3>
                         <p>
                             Replace scattered calls and faxes with structured data,
                             clear documentation, and tracked order status.
                         </p>
                     </div>
-                    <div class="card small">
+                    <div class="card small reveal">
                         <h3>Clear digital paper trail</h3>
                         <p>
                             Every order includes a timeline: who created it,
@@ -201,7 +199,7 @@
                             the pharmacy, and fulfillment/shipping updates when available.
                         </p>
                     </div>
-                    <div class="card small">
+                    <div class="card small reveal">
                         <h3>Software only</h3>
                         <p>
                             Thrival Health is a software company, not a medical practice or
@@ -215,7 +213,7 @@
         <!-- ===== Security & Reliability ===== -->
         <section class="section" id="security">
             <div class="container security-grid">
-                <div>
+                <div class="reveal">
                     <header class="section-header left">
                         <h2>Designed for safety, privacy, and reliability</h2>
                     </header>
@@ -225,7 +223,7 @@
                         clinics and pharmacies.
                     </p>
                 </div>
-                <div class="card">
+                <div class="card reveal">
                     <ul class="feature-list">
                         <li>Role-based access for clinic staff vs. prescribers.</li>
                         <li>Secure connections to integrated pharmacy API systems.</li>
@@ -258,7 +256,7 @@
             </div>
             <div class="footer-meta">
                 <p class="footer-text">
-                    © <span id="year"></span> Thrival Health. All rights reserved.
+                    &copy; <span id="year"></span> Thrival Health. All rights reserved.
                 </p>
                 <p class="footer-text small">
                     Thrival Health provides software only and does not practice medicine
@@ -266,12 +264,23 @@
                 </p>
             </div>
         </div>
-
-        <script>
-            document.getElementById("year").textContent =
-                new Date().getFullYear();
-        </script>
     </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Scroll-triggered reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer.observe(el));
+    </script>
 </body>
 
 </html>
